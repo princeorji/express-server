@@ -1,5 +1,6 @@
 const express = require('express')
-const itemsrouter = require('./routes/item.js')
+const items_router = require('./routes/item.js')
+const users_router = require('./routes/user.js')
 
 const port = 3000
 const app = express()
@@ -7,7 +8,8 @@ const app = express()
 
 app.use(express.json())
 
-app.use('/items', itemsrouter)
+app.use('/items', items_router)
+app.use('/users', users_router)
 
 
 app.get('/', (req, res) => {
